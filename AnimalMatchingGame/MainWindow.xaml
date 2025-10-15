@@ -1,0 +1,65 @@
+﻿<Window x:Class="AnimalMatchingGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Jogo de Combinação"
+        Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <TextBlock Text="🐾 Animal Matching Game 🐾"
+                   FontSize="22" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0,10"/>
+
+        <!-- Grade do jogo -->
+        <Grid Grid.Row="1" x:Name="GameGrid" Margin="0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 16 TextBlocks (4x4) -->
+            <!-- Linha 0 -->
+            <TextBlock x:Name="TextBlock00" Grid.Row="0" Grid.Column="0" />
+            <TextBlock x:Name="TextBlock01" Grid.Row="0" Grid.Column="1" />
+            <TextBlock x:Name="TextBlock02" Grid.Row="0" Grid.Column="2" />
+            <TextBlock x:Name="TextBlock03" Grid.Row="0" Grid.Column="3" />
+
+            <!-- Linha 1 -->
+            <TextBlock x:Name="TextBlock10" Grid.Row="1" Grid.Column="0" />
+            <TextBlock x:Name="TextBlock11" Grid.Row="1" Grid.Column="1" />
+            <TextBlock x:Name="TextBlock12" Grid.Row="1" Grid.Column="2" />
+            <TextBlock x:Name="TextBlock13" Grid.Row="1" Grid.Column="3" />
+
+            <!-- Linha 2 -->
+            <TextBlock x:Name="TextBlock20" Grid.Row="2" Grid.Column="0" />
+            <TextBlock x:Name="TextBlock21" Grid.Row="2" Grid.Column="1" />
+            <TextBlock x:Name="TextBlock22" Grid.Row="2" Grid.Column="2" />
+            <TextBlock x:Name="TextBlock23" Grid.Row="2" Grid.Column="3" />
+
+            <!-- Linha 3 -->
+            <TextBlock x:Name="TextBlock30" Grid.Row="3" Grid.Column="0" />
+            <TextBlock x:Name="TextBlock31" Grid.Row="3" Grid.Column="1" />
+            <TextBlock x:Name="TextBlock32" Grid.Row="3" Grid.Column="2" />
+            <TextBlock x:Name="TextBlock33" Grid.Row="3" Grid.Column="3" />
+        </Grid>
+
+        <!-- Status + Botão -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <TextBlock x:Name="StatusText" Text="Pares encontrados: 0/8" Margin="0,0,20,0"/>
+            <Button x:Name="RestartButton" Content="Novo Jogo" Click="RestartButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
